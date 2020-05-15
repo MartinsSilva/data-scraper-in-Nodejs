@@ -16,7 +16,10 @@ function searchMovies(searchTerm) {
 			const $image = $element.find('td a img');
 			const $title = $element.find('td.result_text a');
 
+			const imdbID = $title.attr('href').match(/title\/(.*)\//);
+
 			const movie = {
+				imdbID,
 				image: $image.attr('src'),
 				title: $title.text()
 			};
